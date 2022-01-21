@@ -1,0 +1,4 @@
+name: Core
+version: 'v1.0'
+main: me.notzorba.dev.corezorba.Core
+api-version: 1.17
