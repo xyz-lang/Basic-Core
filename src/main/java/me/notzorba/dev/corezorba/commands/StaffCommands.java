@@ -6,7 +6,10 @@ import me.notzorba.dev.corezorba.Core;
 import me.notzorba.dev.corezorba.utils.CC;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import redis.clients.jedis.commands.ClientCommands;
+import redis.clients.jedis.util.Pool;
 
+import java.util.Base64;
 import java.util.HashMap;
 
 
