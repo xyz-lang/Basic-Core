@@ -1,6 +1,3 @@
-mongo:
-  uri: "mongodb://<username>:<password>@<host>:<port>/<database>"
-  database: ""
 server:
-  name: "<SERVERNAME>"
-  discord: "<DISCORDLINK>"
+  name: "SERVERNAME"
+  discord: "DISCORDLINK"

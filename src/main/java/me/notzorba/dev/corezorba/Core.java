@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import me.gleeming.command.CommandHandler;
 import me.notzorba.dev.corezorba.listeners.ChatMuted;
+import me.notzorba.dev.corezorba.listeners.SpawnListeners;
+import org.bukkit.configuration.Configuration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Core extends JavaPlugin {
@@ -13,16 +15,18 @@ public final class Core extends JavaPlugin {
     @Override
     public void onEnable() {
 
-        saveConfig();
+        //Config.yml
+        getConfig().options().copyDefaults();
         saveDefaultConfig();
+        reloadConfig();
+
+        //Command & Event Register
         setInstance(this);
         CommandHandler.registerCommands("me.notzorba.dev.corezorba.commands", this);
         this.getServer().getPluginManager().registerEvents(new ChatMuted(), this);
+        this.getServer().getPluginManager().registerEvents(new SpawnListeners(), this);
 
-    }
+        saveConfig();
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 }
