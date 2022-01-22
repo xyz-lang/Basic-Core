@@ -17,16 +17,12 @@ public final class Core extends JavaPlugin {
 
         //Config.yml
         getConfig().options().copyDefaults();
-        saveDefaultConfig();
-        reloadConfig();
 
         //Command & Event Register
         setInstance(this);
         CommandHandler.registerCommands("me.notzorba.dev.corezorba.commands", this);
         this.getServer().getPluginManager().registerEvents(new ChatMuted(), this);
         this.getServer().getPluginManager().registerEvents(new SpawnListeners(), this);
-
-        saveConfig();
 
     }
 }
