@@ -23,7 +23,11 @@ public class SpawnCommands {
 
         Location location = Core.getInstance().getConfig().getLocation("spawn");
 
-        sender.teleport(location);
-        sender.sendMessage(CC.format("&eYou have been teleported to &dspawn"));
+        if(location != null) {
+            sender.teleport(location);
+            sender.sendMessage(CC.format("&eYou have been teleported to &dspawn"));
+        }else{
+            sender.sendMessage(CC.format("&eThe &dspawn &eis not set please contact and &dAdmin"));
+        }
     }
 }

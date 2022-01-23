@@ -20,7 +20,9 @@ public class SpawnListeners implements Listener {
 
             Location location = Core.getInstance().getConfig().getLocation("spawn");
 
-            player.teleport(location);
+            if(location != null) {
+                player.teleport(location);
+            }
             e.setJoinMessage(CC.format("&7[&e+&7] &e" + player.getDisplayName() + "&7 has joined for the first time!"));
         }else {
             e.setJoinMessage(CC.format("&7[&e+&7] &e" + player.getDisplayName()));
@@ -32,6 +34,8 @@ public class SpawnListeners implements Listener {
         Player player = e.getPlayer();
         Location location = Core.getInstance().getConfig().getLocation("spawn");
 
-        e.setRespawnLocation(location);
+        if(location != null) {
+            e.setRespawnLocation(location);
+        }
     }
 }
